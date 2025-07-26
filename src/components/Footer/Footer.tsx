@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/logo.png';
 import './Footer.css';
 
 const Footer: React.FC = () => {
@@ -10,7 +11,10 @@ const Footer: React.FC = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
-            <h3 className="footer-title">Franklin Lakes SEPAG</h3>
+            <div className="footer-logo">
+              <img src={logo} alt="Franklin Lakes SEPAG Logo" className="footer-logo-image" />
+              <h3 className="footer-title">Franklin Lakes SEPAG</h3>
+            </div>
             <p className="footer-description">
               Supporting families and students with special needs in Franklin Lakes, NJ.
               Together we advocate, educate, and empower our community.

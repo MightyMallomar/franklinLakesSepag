@@ -23,6 +23,17 @@ const HeroSection: React.FC = () => {
             <Link to="/events" className="btn btn-outline btn-large">
               Join Our Events
             </Link>
+            <button 
+              onClick={() => {
+                const newsletterSection = document.getElementById('newsletter-signup');
+                if (newsletterSection) {
+                  newsletterSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+              className="btn btn-accent btn-large"
+            >
+              Subscribe to Newsletter
+            </button>
           </div>
           <div className="hero-stats">
             <div className="stat-item">

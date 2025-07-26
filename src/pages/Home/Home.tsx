@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import HeroSection from '../../components/HeroSection/HeroSection.tsx';
 import FeatureCard from '../../components/FeatureCard/FeatureCard.tsx';
 import EventCard from '../../components/EventCard/EventCard.tsx';
@@ -7,6 +7,20 @@ import NewsletterSignup from '../../components/NewsletterSignup/NewsletterSignup
 import './Home.css';
 
 const Home: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Handle hash navigation to newsletter section
+    if (location.hash === '#newsletter') {
+      const newsletterSection = document.getElementById('newsletter-signup');
+      if (newsletterSection) {
+        setTimeout(() => {
+          newsletterSection.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
+
   const features = [
     {
       icon: '🤝',
@@ -129,7 +143,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      <section className="section">
+      <section id="newsletter-signup" className="section">
         <div className="container">
           <div className="newsletter-section">
             <h2 className="section-title">Stay Connected</h2>

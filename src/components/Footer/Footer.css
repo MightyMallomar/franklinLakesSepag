@@ -17,10 +17,23 @@
   flex-direction: column;
 }
 
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-image {
+  height: 32px;
+  width: auto;
+  filter: brightness(0) invert(1); /* Makes the logo white */
+}
+
 .footer-title {
   font-size: 1.5rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin: 0;
   color: white;
 }
 
@@ -146,6 +159,10 @@
   .footer-content {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .footer-logo-image {
+    height: 28px;
   }
 
   .footer-section {

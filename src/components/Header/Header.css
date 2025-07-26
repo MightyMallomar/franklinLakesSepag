@@ -23,8 +23,6 @@
 }
 
 .logo {
-  display: flex;
-  flex-direction: column;
   text-decoration: none;
   color: var(--text-primary);
   transition: var(--transition);
@@ -32,6 +30,26 @@
 
 .logo:hover {
   color: var(--primary-color);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  color: #155cd1;
+  /* filter: brightness(0); Makes the logo white */
+  transition: filter 0.3s ease;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .logo h1 {
@@ -92,6 +110,24 @@
   height: 2px;
   background-color: var(--primary-color);
   border-radius: 1px;
+}
+
+.nav-link-subscribe {
+  background-color: var(--primary-color);
+  color: white !important;
+  padding: 0.5rem 1rem !important;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.nav-link-subscribe:hover {
+  background-color: var(--primary-dark);
+  color: white !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .hamburger {
@@ -163,8 +199,18 @@
     padding: 1rem 0;
   }
 
+  .nav-link-subscribe {
+    font-size: 1.25rem;
+    padding: 1rem 1.5rem !important;
+    margin: 0.5rem 0;
+  }
+
   .nav-link-active::after {
     display: none;
+  }
+
+  .logo-image {
+    height: 32px;
   }
 
   .logo h1 {
@@ -179,6 +225,10 @@
 @media (max-width: 480px) {
   .header-content {
     padding: 0.75rem 0;
+  }
+
+  .logo-image {
+    height: 28px;
   }
 
   .logo h1 {
